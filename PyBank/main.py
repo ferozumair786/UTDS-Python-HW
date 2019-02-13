@@ -40,11 +40,11 @@ with open(banking,newline="") as bankfile:
             dates.append(row[0])
 
     #loop over the profits list
-    for amount in profit:
+    for i in range(len(profit)):
         
         #only calcilate difference once we are past the first row 
-         if amount != profit[0]:
-             difference = amount - profit[-1]
+         if profit[i] != profit[0]:
+             difference = profit[i] - profit[i-1]
              delta.append(difference)
 
     #simultaneous loop over delta and dates lists
